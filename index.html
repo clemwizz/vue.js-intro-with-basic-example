@@ -5,26 +5,73 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Demo Vue.js</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
 <body>
-    <div id="app">
-        <h1>{{ titre }}</h1>
-        <label>Number 1 : </label>
-        <input type="number" v-model="nbre1"><br/><br/>
-        
-        <label>Number 2 : </label>
-        <input type="number" v-model="nbre2"><br/><br/>
+    <br/><br/>
+    <div id="app" class="container">
+        <div class="card" style="width: 21rem;">
+            <div class="card-header">
+                <strong>{{ titre }}</strong>
+            </div>
+            <div class="card-body">
 
-        <label>Opération :</label>
-        <select v-model="operation">
-            <option v-for="option in selectOptions" v-bind:value="option.value" v-bind:selected="option.selected">{{ option.text }}</option>
-        </select><br/><br/>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Number 1</span>
+                    </div>
+                    <input type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" v-model="nbre1">
+                </div>
 
-        <div id="result">
-            Result : <span style="color:blue"><strong>{{ result }}</strong></span>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Number 2</span>
+                    </div>
+                    <input type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" v-model="nbre2">
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="inputGroupSelect01">Operation</label>
+                    </div>
+                    <select class="custom-select" id="inputGroupSelect01" v-model="operation">
+                        <option v-for="option in selectOptions" v-bind:value="option.value" v-bind:selected="option.selected">{{ option.text }}</option>
+                    </select>
+                </div>
+
+                <!--                 
+                <div class="row">
+                    <div class="col-2"><label>Number 1</label></div>
+                    <div class="col-5"><input type="number" v-model="nbre1"><br/><br/></div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-2"><label>Number 2</label></div>
+                    <div class="col-5"><input type="number" v-model="nbre2"><br/><br/></div>
+                </div>
+                -->
+
+                <!--
+                <div class="row">
+                    <div class="col-2"><label>Operation</label></div>
+                    <div class="col-5">
+                        <select v-model="operation">
+                            <option v-for="option in selectOptions" v-bind:value="option.value" v-bind:selected="option.selected">{{ option.text }}</option>
+                        </select><br/><br/>
+                    </div>
+                </div>
+                -->
+            </div>
+            <div id="result" class="card-footer">
+                Result : <span style="color:blue"><strong>{{ result }}</strong></span>
+            </div>
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="js/vuejs-2.5.19.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
