@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Demo Vue.js</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <div id="app">
+        <h1>{{ titre }}</h1>
+        <label>Number 1 : </label>
+        <input type="number" v-model="nbre1"><br/><br/>
+        
+        <label>Number 2 : </label>
+        <input type="number" v-model="nbre2"><br/><br/>
+
+        <label>Opération :</label>
+        <select v-model="operation">
+            <option v-for="option in selectOptions" v-bind:value="option.value" v-bind:selected="option.selected">{{ option.text }}</option>
+        </select><br/><br/>
+
+        <div id="result">
+            Result : <span style="color:blue"><strong>{{ result }}</strong></span>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
